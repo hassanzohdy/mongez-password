@@ -1,0 +1,36 @@
+{
+  "name": "@mongez/password",
+  "version": "1.0.4",
+  "description": "A password hash generator and verifier.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test:coverage": "jest ./tests --coverage",
+    "test:watch": "jest ./tests --watch",
+    "test": "jest ./tests",
+    "test:file": "jest"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
+    "jest-esm-jsx-transform": "^1.0.0",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  },
+  "keywords": [
+    "password",
+    "hash",
+    "make",
+    "generate",
+    "verify",
+    "brute-force"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hassanzohdy/mongez-password"
+  },
+  "author": "hassanzohdy",
+  "license": "MIT"
+}
