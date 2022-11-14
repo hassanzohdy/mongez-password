@@ -1,4 +1,4 @@
-import Password, { setDefaultPasswordSalt } from "./../src";
+import Password, { hash, setDefaultPasswordSalt, verify } from "./../src";
 
 describe("mongez/password", () => {
   it("Should generate a hashed password", () => {
@@ -41,10 +41,26 @@ describe("mongez/password", () => {
 
     const hashedPassword = Password.generate(password);
 
-    console.log(hashedPassword);
-
     expect(hashedPassword).not.toEqual(password);
 
     expect(Password.verify(hashedPassword, password)).toBeTruthy();
+  });
+
+  it("should generate a hash password and verify it using hash and verify functions", () => {
+    const password = "123456";
+
+    const hashedPassword = hash(password);
+
+    expect(hashedPassword).not.toEqual(password);
+
+    expect(verify(hashedPassword, password)).toBeTruthy();
+  });
+
+  it("should verify correctly by mixing calling Password.hash method and `verify` function", () => {
+    const password = "123456";
+
+    const hashedPassword = Password.generate(password);
+
+    expect(verify(hashedPassword, password)).toBeTruthy();
   });
 });

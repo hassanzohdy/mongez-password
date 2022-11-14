@@ -45,7 +45,15 @@ import Password from '@mongez/password';
 
 // verify a password
 const isValid = await Password.verify('123456', '$2a$15$Yw76mQjsULdRb14qtBZ7Y.iMkJNrbewQ4cpX/PPP0nt4wQuUo70Fu'); // true
+```
 
+Or you can import directly the `verify` method.
+
+```ts
+import { verify } from '@mongez/password';
+
+// verify a password
+const isValid = verify('123456', '$2a$15$Yw76mQjsULdRb14qtBZ7Y.iMkJNrbewQ4cpX/PPP0nt4wQuUo70Fu'); // true
 ```
 
 ## Custom Salt
